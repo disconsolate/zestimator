@@ -23,6 +23,10 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+configurations.all {
+    exclude group: "commons-logging", module: "commons-logging"
+}
+
 
 dependencies {
     //spring-boot
@@ -32,4 +36,12 @@ dependencies {
 
     //test
     testCompile('junit:junit:4.12')
+    compile("info.cukes:cucumber-spring:1.2.5")
+    compile("info.cukes:cucumber-junit:1.2.5")
+    compile("info.cukes:cucumber-java:1.2.5")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    // spreadsheet
+    compile('org.apache.poi:poi:4.0.0')
+    compile('org.apache.poi:poi-ooxml:4.0.0')
 }
